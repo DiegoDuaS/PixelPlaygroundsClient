@@ -1,6 +1,6 @@
 ul.box {
     position: fixed;
-    top: 80px;
+    top: 100px;
     left: 0;
     list-style: none;
     display: flex;
@@ -10,25 +10,25 @@ ul.box {
     padding: 0;
     margin: 0;
     width: 100%;
-    height: auto; 
+    height: 900px; 
     overflow-x: auto;
     overflow-y: hidden; 
-    white-space: nowrap; 
   }
 
   ul.box > li {
     flex: 0 0 auto; 
-    margin-right: 10px; 
+    margin-right: 40px; 
   }
 
   @media (max-width: 768px) {
     ul.box {
+      height: auto; 
       justify-content: flex-start; /* Cambia el comportamiento de la justificación en dispositivos móviles según sea necesario */
       padding: 0 10px; /* Agrega un poco de relleno a los lados para evitar que las tarjetas toquen los bordes */
     }
   
     ul.box > li {
-      margin-right: 5px; /* Reduce el espacio entre las tarjetas en dispositivos móviles */
+      margin-right: 40px; /* Reduce el espacio entre las tarjetas en dispositivos móviles */
     }
   }
   
