@@ -1,7 +1,8 @@
 import HeaderMain from "./header"
 import './mainsection.css'
 import Card from "./card"
-import useApi from "../Hooks/useApi"
+import useApi from "../../Hooks/useApi"
+import { Blocks } from 'react-loader-spinner'
 
 
 
@@ -12,7 +13,16 @@ function HomePage() {
         return (
             <>
                 <HeaderMain />
-                <p>Cargando...</p>
+                <p className="loading">Cargando...</p>
+                <Blocks
+                     height="80"
+                     width="80"
+                     color="#ffffff"
+                     ariaLabel="blocks-loading"
+                     wrapperStyle={{}}
+                     wrapperClass="blocks-wrapper"
+                     visible={true}
+                />
             </>
         );
     }
@@ -21,7 +31,7 @@ function HomePage() {
         return (
             <>
                 <HeaderMain />
-                <p>Error: {errorMessage}</p>
+                <p className="loading">{errorMessage} : (</p>
             </>
         );
     }

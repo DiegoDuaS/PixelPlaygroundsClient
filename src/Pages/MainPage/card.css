@@ -59,6 +59,31 @@ li {
 
     p.info {
       overflow-wrap: break-word;
+      margin-inline-start: 30px;
+      margin-inline-end: 30px;
+      font-family: "Questrial", sans-serif;
+      font-size: 0.8rem;
     }
+
+    h2.game{
+      font-size: 1.3rem;
+      font-weight: normal;
+      color: #ffffff;
+      font-family: "Fira Sans Condensed", sans-serif;
+      padding: 0;
+      margin-block-start: 0.5em;
+      margin-block-end: 0.25em;
+    } 
+
+    h5.date{
+      font-size: 1.2rem;
+      font-weight: lighter;
+      color: #ffffff;
+      font-family: "Fira Sans Condensed", sans-serif;
+      margin-block-start: 0.25em;
+      margin-block-end: 0.5em;
+    }
+
+
   }
 

@@ -1,15 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import HomePage from './MainPage/homepage'
-import LoginPage from './LoginPage/loginpage'
+import { NavigationProvider } from './Hooks/useNavigation'
+import Pages from './Pages'
 
 function App() {
 
   return (
     <>
-      <HomePage></HomePage>
+      <NavigationProvider>
+        <Pages />
+      </NavigationProvider>
     </>
   )
 }
