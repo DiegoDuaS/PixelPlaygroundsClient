@@ -40,7 +40,7 @@ function HomePage() {
         return (
             <>
                 <HeaderMain />
-                <h4>No hay posts</h4>
+                <h4 className="loading" >No hay posts</h4>
             </>
         );
     }
@@ -51,6 +51,7 @@ function HomePage() {
             <ul className='box'>
                 {data.map((post, index) => (
                     <Card
+                        key={post.post_id}
                         nombre={post.name}
                         fecha={(post.release_date).substring(0, 10)}
                         info={post.description}

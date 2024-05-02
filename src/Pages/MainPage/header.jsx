@@ -3,8 +3,8 @@ import './header.css'
 function HeaderMain(){
     return(
         <>
-        <header class='main'>
-            <div class = 'restitle'> Pixel Playgrounds </div>
+        <header className='main'>
+            <div className = 'restitle'> Pixel Playgrounds </div>
         </header>
         </>
     )

@@ -4,8 +4,8 @@ function HeaderLogin(){
 
     return(
         <>
-        <header class='main'>
-            <div class = 'restitle'> Pixel Playgrounds Admin</div>
+        <header className='main'>
+            <div className = 'restitle'> Pixel Playgrounds Admin</div>
         </header>
         </>
     )

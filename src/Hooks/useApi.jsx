@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useApi = (url, method, initialData = []) => {
+const useApi = (url, method, initialData = [], options = {}) => {
   const [data, setData] = useState(initialData);
   const [errorMessage, setErrorMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(true); 
@@ -38,7 +38,7 @@ const useApi = (url, method, initialData = []) => {
     };
 
     fetchData();
-  }, [url, method]);
+  }, [url, method, options]);
 
   return { data, errorMessage, isLoading };
 };

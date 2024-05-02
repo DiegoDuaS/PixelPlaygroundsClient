@@ -1,12 +1,14 @@
-//import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 import useNavigate from '../Hooks/useNavigation'
+import useToken from '../Hooks/useToken'
 
 import HomePage from './MainPage/homepage'
 import LoginPage from './LoginPage/loginpage'
 import AdminPage from './AdminPage/adminpage'
 
 import HeaderLogin from './LoginPage/header'
+import './MainPage/mainsection.css'
 
 const routes = {
     '/': {
@@ -26,20 +28,19 @@ const routes = {
 
 const Pages = () => {
     const { page, navigate } = useNavigate()
+    const { token } = useToken() 
     
     let CurrentPage = () => <h1>404</h1>
-    // && !token
 
-    if (routes[page] && routes[page].requiresAuth ) {
+    if (routes[page] && routes[page].requiresAuth && !token) {
       return <div> 
         <HeaderLogin/>
-        <h1>Unauthorized</h1>
-        <a href='/login' onClick={() => navigate('/login')}>Please login</a>
+        <h1 className='unauthorized'>No autorizado</h1>
+        <a className='gologin' href='/login' onClick={() => navigate('/login')}>Iniciar Sesión</a>
       </div>
     }
   
     CurrentPage = routes[page].component
-    console.log('Current page:', page);
   
     return (
       <div>
@@ -48,9 +49,9 @@ const Pages = () => {
     )
   }
 
-  /* Pages.propTypes = {
+  Pages.propTypes = {
     token: PropTypes.string,
     setToken: PropTypes.func
-  } */
+  } 
   
   export default Pages

@@ -1,14 +1,17 @@
 import './App.css'
 import { NavigationProvider } from './Hooks/useNavigation'
+import { TokenProvider } from './Hooks/useToken'
 import Pages from './Pages'
 
 function App() {
 
   return (
     <>
-      <NavigationProvider>
-        <Pages />
-      </NavigationProvider>
+      <TokenProvider>
+        <NavigationProvider>
+          <Pages />
+        </NavigationProvider>
+      </TokenProvider>
     </>
   )
 }
