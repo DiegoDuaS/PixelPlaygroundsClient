@@ -1,18 +1,35 @@
-import HeaderMain from "./header"
-import './mainsection.css'
-import Card from "../../Components/card"
+import './deletepost.css'
+import AdminCard from '../../Components/admincards'
+import Popup from '../../Components/popup'
 import useApi from "../../Hooks/useApi"
 import { Blocks } from 'react-loader-spinner'
+import { useState } from 'react'
 
 
+function DeletePost(){
 
-function HomePage() {
     const { data, errorMessage, isLoading } = useApi('http://127.0.0.1:3002/posts', 'GET');
+    const[postName, setpostName] = useState("")
+    const[idpost, setidpost] = useState(null)
+    const[isOpen, setisOpen] = useState(false)
+
+    const handleAdminCardClick = (id, name) => {
+        setidpost(id)
+        setisOpen(true)
+        setpostName(name)
+    };
+
+    const closePopup = () => {
+        setisOpen(false)
+    }
+
+    const handleDelete = () => {
+        setisOpen(false)
+    }
 
     if (isLoading) {
         return (
             <>
-                <HeaderMain />
                 <p className="loading">Cargando...</p>
                 <Blocks
                      height="80"
@@ -30,7 +47,6 @@ function HomePage() {
     if (errorMessage) {
         return (
             <>
-                <HeaderMain />
                 <p className="loading">{errorMessage} : (</p>
             </>
         );
@@ -39,7 +55,6 @@ function HomePage() {
     if (!data || data.length === 0) {
         return (
             <>
-                <HeaderMain />
                 <h4 className="loading" >No hay posts</h4>
             </>
         );
@@ -47,20 +62,23 @@ function HomePage() {
 
     return (
         <>
-            <HeaderMain />
-            <ul className='box'>
+            <ul className='postsbox'>
                 {data.map((post, index) => (
-                    <Card
+                    <AdminCard
                         key={post.post_id}
+                        id={post.post_id}
                         nombre={post.name}
                         fecha={(post.release_date).substring(0, 10)}
                         info={post.description}
-                        imagen={post.image}
+                        onClick={() => handleAdminCardClick(post.post_id, post.name)}
                     />
                 ))}
             </ul>
+            <Popup isOpen={isOpen} postName={postName} closePopup={closePopup} handleDelete={handleDelete}>
+            </Popup>
         </>
     );
 }
 
-export default HomePage
+
+export default DeletePost

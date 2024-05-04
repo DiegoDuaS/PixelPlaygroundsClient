@@ -33,7 +33,7 @@ const Pages = () => {
     let CurrentPage = () => <h1>404</h1>
 
     if (routes[page] && routes[page].requiresAuth && !token) {
-      return <div> 
+      return <div className='box'> 
         <HeaderLogin/>
         <h1 className='unauthorized'>No autorizado</h1>
         <a className='gologin' href='/login' onClick={() => navigate('/login')}>Iniciar Sesión</a>

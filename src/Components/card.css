@@ -45,7 +45,7 @@ li.card {
   }
   
   @media (max-width: 768px) {
-    li {
+    li.card {
       height: 500px;
       width: 300px;
       margin-right: 20px;

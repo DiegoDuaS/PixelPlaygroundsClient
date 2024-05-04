@@ -1,0 +1,17 @@
+li.admincard {
+    height: 250px; 
+    width: 800px; 
+    border: 5px solid #ffffff;
+    margin-right: 10px; 
+    margin-left: 10px; 
+    margin-bottom: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-evenly;
+}
+
+.admincard:hover{
+    border: 7px solid #ffffff;
+}

@@ -1,10 +1,7 @@
 import './nav.css'
-import React, { useState } from 'react';
 
+function NavBar({selectedOption, setSelectedOption}) {
 
-function NavBar() {
-    
-    const [selectedOption, setSelectedOption] = useState("");
     return (
       <nav>
         <ul className='nav'>

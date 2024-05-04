@@ -11,6 +11,7 @@ function LoginBox(){
     const { setToken } = useToken(); 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [errorData, setErrorData] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -34,9 +35,11 @@ function LoginBox(){
             } 
             else {
                 const errorData = await response.json();
-                console.error('Error al iniciar sesión:', errorData);
+                setErrorData('Usuario o contraseña incorrecta')
+                console.error('Error al iniciar sesión', errorData);
             }
         } catch (error) {
+            setErrorData('Error al enviar solicitud de inicio de sesión')
             console.error('Error al enviar solicitud de inicio de sesión:', error);
         }
     };
@@ -45,6 +48,13 @@ function LoginBox(){
         <>
             <form className='box' onSubmit={handleSubmit}>
                 <h1 className='logintitle'> Login </h1>
+                {
+                    errorData !== '' ? (
+                        <div className='error-message' onClick={() => setErrorData('')}>
+                            {errorData}
+                        </div>
+                    ) : null
+                }
                 <input 
                     className="login" 
                     type="text" 

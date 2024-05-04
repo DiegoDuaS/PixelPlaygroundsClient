@@ -58,4 +58,11 @@ ul.box {
     margin-block-start: 0.5em;
     margin-block-end: 0.25em;
   }
+
+  div.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   

@@ -39,3 +39,13 @@ button.loginbutton{
     font-family: "Fira Sans Condensed", sans-serif;
     font-size: 1.2rem;
 }
+
+div.error-message {
+    border: 1px solid #e34850;
+    color: #e34850;
+    background-color: #e3485033;
+    border-radius: 5px;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 10px 5px;
+  }
