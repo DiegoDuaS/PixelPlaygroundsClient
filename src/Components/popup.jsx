@@ -8,14 +8,16 @@ const Popup = ({ isOpen, closePopup, handleDelete, postName}) => {
       <div className="popup-overlay" onClick={closePopup}>
         <div className="popup-content" onClick={(e) => e.stopPropagation()}>
           <div className="popup-text-container">
-            <p>¿Seguro que quiere borrar el post de {postName}?</p>
+            <p className='popup-text'>¿Seguro que quiere borrar el post de {postName}?</p>
           </div>
-          <button className="realizado-button" onClick={handleDelete}>
-            Si
-          </button>
-          <button className="close-button" onClick={closePopup}>
-            No
-          </button>
+          <div className="popup-button-container">
+            <button className="container-button" onClick={handleDelete}>
+              Si
+            </button>
+            <button className="container-button" onClick={closePopup}>
+              No
+            </button>
+          </div>
         </div>
       </div>
     )

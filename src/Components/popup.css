@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&display=swap');
+
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -9,4 +12,23 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
+}
+
+.popup-button-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container-button{
+    font-family: "Fira Sans Condensed", sans-serif;
+    background-color: white;
+    color: black;
+    width: 100px;
+    font-size: 1.5rem;
+}
+
+.popup-text{
+    font-size: 2rem;
+    background-color: black;
+    font-family: "Fira Sans Condensed", sans-serif;
 }

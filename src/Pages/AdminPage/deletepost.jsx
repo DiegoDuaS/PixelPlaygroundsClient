@@ -12,6 +12,7 @@ function DeletePost(){
     const[postName, setpostName] = useState("")
     const[idpost, setidpost] = useState(null)
     const[isOpen, setisOpen] = useState(false)
+    const [errorData, setErrorData] = useState('');
 
     const handleAdminCardClick = (id, name) => {
         setidpost(id)
@@ -23,7 +24,30 @@ function DeletePost(){
         setisOpen(false)
     }
 
-    const handleDelete = () => {
+    const handleDelete = async () => {
+        try {
+            const response = await fetch('http://127.0.0.1:3002/deletepost', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                post_id: idpost
+                }),
+            })
+
+            if (response.ok) {
+                const responseData = await response.json();
+                console.log(responseData)
+            } 
+            else {
+                const errorData = await response.json();
+                setErrorData('Id del post a borrar incorrecto')
+            }
+        } catch (error) {
+            setErrorData('Error al enviar solicitud de borrado')
+    
+        }
         setisOpen(false)
     }
 

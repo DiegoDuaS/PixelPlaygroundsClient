@@ -5,9 +5,9 @@ function NavBar({selectedOption, setSelectedOption}) {
     return (
       <nav>
         <ul className='nav'>
-          <li className={`nav ${selectedOption === 'nuevopost' ? 'selected' : ''}`}><a href="#" className='nava' onClick={() => setSelectedOption('nuevopost')}>Nuevo Post</a></li>
-          <li className={`nav ${selectedOption === 'editarpost' ? 'selected' : ''}`}><a href="#" className='nava' onClick={() => setSelectedOption('editarpost')}>Editar Post</a></li>
-          <li className={`nav ${selectedOption === 'borrarpost' ? 'selected' : ''}`}><a href="#" className='nava' onClick={() => setSelectedOption('borrarpost')}>Eliminar Post</a></li>
+          <li className={`nav ${selectedOption === 'nuevopost' ? 'selected' : ''}`} onClick={() => setSelectedOption('nuevopost')}><a href="#" className='nava' onClick={() => setSelectedOption('nuevopost')}>Nuevo Post</a></li>
+          <li className={`nav ${selectedOption === 'editarpost' ? 'selected' : ''}`} onClick={() => setSelectedOption('editarpost')}><a href="#" className='nava' onClick={() => setSelectedOption('editarpost')}>Editar Post</a></li>
+          <li className={`nav ${selectedOption === 'borrarpost' ? 'selected' : ''}`} onClick={() => setSelectedOption('borrarpost')}><a href="#" className='nava' onClick={() => setSelectedOption('borrarpost')}>Eliminar Post</a></li>
         </ul>
       </nav>
     );
