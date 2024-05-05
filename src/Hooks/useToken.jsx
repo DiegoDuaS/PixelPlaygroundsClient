@@ -1,20 +1,20 @@
-import { useState, useEffect, createContext, useContext } from 'react'
-
+import React, { useState, useEffect, createContext, useContext } from 'react'
+import PropTypes from 'prop-types'
 
 function parseJwt (token) {
-    const base64Url = token.split('.')[1]
-    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/')
-    const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
-    }).join(''))
+  const base64Url = token.split('.')[1]
+  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/')
+  const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
+    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
+  }).join(''))
 
-    return JSON.parse(jsonPayload)
+  return JSON.parse(jsonPayload)
 }
 
 const TokenContext = createContext({ token: '', useToken: () => {} })
 
 const TokenProvider = ({ children }) => {
-  const [ token, setToken ] = useState(
+  const [token, setToken] = useState(
     localStorage.getItem('access_token') || null
   )
 
@@ -25,7 +25,7 @@ const TokenProvider = ({ children }) => {
   }, [token])
 
   const isLoggedIn = !!token
-  
+
   const getRawToken = () => {
     return parseJwt(token)
   }
@@ -37,10 +37,13 @@ const TokenProvider = ({ children }) => {
   )
 }
 
-const useToken = () => {
-  return useContext(TokenContext) 
+TokenProvider.propTypes = {
+  children: PropTypes.node.isRequired
 }
 
+const useToken = () => {
+  return useContext(TokenContext)
+}
 
 export default useToken
 export { TokenContext, TokenProvider }

@@ -1,10 +1,11 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 import './popup.css'
 
-const Popup = ({ isOpen, closePopup, handleDelete, postName}) => {
-    if (isOpen === false) return null
-  
-    return (
+const Popup = ({ isOpen, closePopup, handleDelete, postName }) => {
+  if (isOpen === false) return null
+
+  return (
       <div className="popup-overlay" onClick={closePopup}>
         <div className="popup-content" onClick={(e) => e.stopPropagation()}>
           <div className="popup-text-container">
@@ -20,7 +21,14 @@ const Popup = ({ isOpen, closePopup, handleDelete, postName}) => {
           </div>
         </div>
       </div>
-    )
-  }
-  
-  export default Popup
+  )
+}
+
+Popup.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  closePopup: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+  postName: PropTypes.string.isRequired
+}
+
+export default Popup

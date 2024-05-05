@@ -1,10 +1,10 @@
+import React from 'react'
 import './App.css'
 import { NavigationProvider } from './Hooks/useNavigation'
 import { TokenProvider } from './Hooks/useToken'
 import Pages from './Pages'
 
-function App() {
-
+function App () {
   return (
     <>
       <TokenProvider>
@@ -13,7 +13,7 @@ function App() {
         </NavigationProvider>
       </TokenProvider>
     </>
-  )
+  );
 }
 
 export default App

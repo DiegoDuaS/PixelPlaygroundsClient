@@ -1,58 +1,56 @@
+import React, { useState } from 'react'
 import './deletepost.css'
 import AdminCard from '../../Components/admincards'
 import Popup from '../../Components/popup'
-import useApi from "../../Hooks/useApi"
+import useApi from '../../Hooks/useApi'
 import { Blocks } from 'react-loader-spinner'
-import { useState } from 'react'
 
+function DeletePost () {
+  const { data, errorMessage, isLoading } = useApi('http://127.0.0.1:3002/posts', 'GET');
+  const [postName, setpostName] = useState('')
+  const [idpost, setidpost] = useState(null)
+  const [isOpen, setisOpen] = useState(false)
+  const [errorData, setErrorData] = useState('')
+  const [isDeleted, setIsDeleted] = useState('');
 
-function DeletePost(){
+  const handleAdminCardClick = (id, name) => {
+    setidpost(id)
+    setisOpen(true)
+    setpostName(name)
+  };
 
-    const { data, errorMessage, isLoading } = useApi('http://127.0.0.1:3002/posts', 'GET');
-    const[postName, setpostName] = useState("")
-    const[idpost, setidpost] = useState(null)
-    const[isOpen, setisOpen] = useState(false)
-    const [errorData, setErrorData] = useState('');
+  const closePopup = () => {
+    setisOpen(false)
+  }
 
-    const handleAdminCardClick = (id, name) => {
-        setidpost(id)
-        setisOpen(true)
-        setpostName(name)
-    };
+  const handleDelete = async () => {
+    try {
+      const response = await fetch('http://127.0.0.1:3002/deletepost', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          post_id: idpost
+        })
+      })
 
-    const closePopup = () => {
-        setisOpen(false)
+      if (response.ok) {
+        setIsDeleted('deleted')
+        setTimeout(() => {
+          setIsDeleted('')
+        }, 3000)
+      } else {
+        setErrorData('Id del post a borrar incorrecto')
+      }
+    } catch (error) {
+      setErrorData('Error al enviar solicitud de borrado')
     }
+    setisOpen(false)
+  }
 
-    const handleDelete = async () => {
-        try {
-            const response = await fetch('http://127.0.0.1:3002/deletepost', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                post_id: idpost
-                }),
-            })
-
-            if (response.ok) {
-                const responseData = await response.json();
-                console.log(responseData)
-            } 
-            else {
-                const errorData = await response.json();
-                setErrorData('Id del post a borrar incorrecto')
-            }
-        } catch (error) {
-            setErrorData('Error al enviar solicitud de borrado')
-    
-        }
-        setisOpen(false)
-    }
-
-    if (isLoading) {
-        return (
+  if (isLoading) {
+    return (
             <>
                 <p className="loading">Cargando...</p>
                 <Blocks
@@ -65,26 +63,26 @@ function DeletePost(){
                      visible={true}
                 />
             </>
-        );
-    }
+    );
+  }
 
-    if (errorMessage) {
-        return (
+  if (errorMessage) {
+    return (
             <>
                 <p className="loading">{errorMessage} : (</p>
             </>
-        );
-    }
+    );
+  }
 
-    if (!data || data.length === 0) {
-        return (
+  if (!data || data.length === 0) {
+    return (
             <>
                 <h4 className="loading" >No hay posts</h4>
             </>
-        );
-    }
+    );
+  }
 
-    return (
+  return (
         <>
             <ul className='postsbox'>
                 {data.map((post, index) => (
@@ -97,12 +95,29 @@ function DeletePost(){
                         onClick={() => handleAdminCardClick(post.post_id, post.name)}
                     />
                 ))}
+                {
+                isDeleted !== ''
+                  ? (
+                    <h4 className='loading'>
+                        Post Borrado Correctamente
+                    </h4>
+                    )
+                  : null
+                }
+                {
+                    errorData !== ''
+                      ? (
+                        <div className='error-message' onClick={() => setErrorData('')}>
+                            {errorData}
+                        </div>
+                        )
+                      : null
+                }
             </ul>
             <Popup isOpen={isOpen} postName={postName} closePopup={closePopup} handleDelete={handleDelete}>
             </Popup>
         </>
-    );
+  );
 }
-
 
 export default DeletePost

@@ -1,24 +1,23 @@
-import HeaderLogin from "../LoginPage/header"
-import NavBar from "../../Components/nav"
-import { useState } from 'react'
-import NewPost from "./newpost"
-import EditPost from "./editpost"
-import DeletePost from "./deletepost"
+import React, { useState } from 'react'
+import HeaderLogin from '../LoginPage/header'
+import NavBar from '../../Components/nav'
 
-function AdminPage(){
+import NewPost from './newpost'
+import EditPost from './editpost'
+import DeletePost from './deletepost'
 
-    const [selectedOption, setSelectedOption] = useState("nuevopost")
+function AdminPage () {
+  const [selectedOption, setSelectedOption] = useState('nuevopost')
 
-    return(
+  return (
         <>
             <HeaderLogin> </HeaderLogin>
             <NavBar selectedOption={selectedOption} setSelectedOption={setSelectedOption}></NavBar>
             {selectedOption === 'nuevopost' && <NewPost/>}
             {selectedOption === 'editarpost' && <EditPost/>}
-            {selectedOption === 'borrarpost' && <DeletePost/>}  
+            {selectedOption === 'borrarpost' && <DeletePost/>}
         </>
-    )
-
+  )
 }
 
 export default AdminPage

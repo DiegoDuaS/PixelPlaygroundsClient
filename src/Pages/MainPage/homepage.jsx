@@ -1,16 +1,15 @@
-import HeaderMain from "./header"
+import React from 'react'
+import HeaderMain from './header'
 import './mainsection.css'
-import Card from "../../Components/card"
-import useApi from "../../Hooks/useApi"
+import Card from '../../Components/card'
+import useApi from '../../Hooks/useApi'
 import { Blocks } from 'react-loader-spinner'
 
+function HomePage () {
+  const { data, errorMessage, isLoading } = useApi('http://127.0.0.1:3002/posts', 'GET');
 
-
-function HomePage() {
-    const { data, errorMessage, isLoading } = useApi('http://127.0.0.1:3002/posts', 'GET');
-
-    if (isLoading) {
-        return (
+  if (isLoading) {
+    return (
             <>
                 <HeaderMain />
                 <p className="loading">Cargando...</p>
@@ -24,28 +23,28 @@ function HomePage() {
                      visible={true}
                 />
             </>
-        );
-    }
+    );
+  }
 
-    if (errorMessage) {
-        return (
+  if (errorMessage) {
+    return (
             <>
                 <HeaderMain />
                 <p className="loading">{errorMessage} : (</p>
             </>
-        );
-    }
+    );
+  }
 
-    if (!data || data.length === 0) {
-        return (
+  if (!data || data.length === 0) {
+    return (
             <>
                 <HeaderMain />
                 <h4 className="loading" >No hay posts</h4>
             </>
-        );
-    }
+    );
+  }
 
-    return (
+  return (
         <>
             <HeaderMain />
             <ul className='box'>
@@ -60,7 +59,7 @@ function HomePage() {
                 ))}
             </ul>
         </>
-    );
+  );
 }
 
 export default HomePage
