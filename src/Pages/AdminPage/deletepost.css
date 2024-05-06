@@ -22,4 +22,11 @@ p.loading {
     font-family: "Jersey 10", sans-serif;
 }
 
+@media (max-width: 768px) {
+
+  ul.postsbox {
+    margin-top: 50px;
+  }
+}
+
 

@@ -56,3 +56,28 @@ a{
 .selected{
     border-bottom: 1px solid #ffffff;
 }
+
+@media (max-width: 768px) {
+    nav{ 
+        position: relative;
+        padding: 0;
+        top: 0;
+    }
+
+    ul.nav{
+        height: 50px;
+        width: auto;
+    }
+
+
+    li.nav {
+        width: 100px;
+        height: 30px;
+    }
+
+    .nava {
+        font-size: 1rem;
+    }
+
+    
+}

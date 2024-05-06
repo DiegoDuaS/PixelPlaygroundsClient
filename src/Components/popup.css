@@ -32,3 +32,14 @@
     background-color: black;
     font-family: "Fira Sans Condensed", sans-serif;
 }
+
+@media (max-width: 768px) {
+
+    .popup-text{
+        font-size: 1rem;
+    }
+
+    .container-button{
+        font-size: 0.8rem;
+    }
+}

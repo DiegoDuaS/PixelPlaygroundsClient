@@ -15,3 +15,10 @@ li.admincard {
 .admincard:hover{
     border: 7px solid #ffffff;
 }
+
+@media (max-width: 768px) {
+    li.admincard {
+        height: auto; 
+        width: auto; 
+    }
+}

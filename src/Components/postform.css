@@ -41,3 +41,30 @@ button.post{
     min-width: 100%;
     padding: 10px 5px;
 }
+
+@media (max-width: 768px) {
+    form.boxnewpost{
+        bottom: 200px;
+        height: 400px;
+        width: 300px;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    input.post{
+        width: 220px;
+        height: 30px;
+        font-size: 0.8rem;
+        padding-left: 10px;
+    }
+
+    button.post{
+        width: 220px;
+        height: 30px;
+        color: black;
+        font-family: "Fira Sans Condensed", sans-serif;
+        font-size: 0.8rem;
+    }
+
+    
+  }

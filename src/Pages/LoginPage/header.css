@@ -12,7 +12,6 @@
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
-    z-index: 1000;
 }
 
 .restitle {
@@ -20,17 +19,22 @@
     font-weight: bold;
     color: #ffffff;
     font-family: "Jersey 10", sans-serif;
-
 }
 
   
 @media (max-width: 768px) {
+
+    .main{
+        background-color: black;
+        position: relative;
+    }
+
     .restitle {
         font-size: 2rem;
         font-weight: bold;
         color: #ffffff;
         margin-left: 15px;
         font-family: "Jersey 10", sans-serif;
-        padding-right: 40px;
+
     }
   }

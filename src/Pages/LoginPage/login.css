@@ -49,3 +49,26 @@ div.error-message {
     min-width: 100%;
     padding: 10px 5px;
   }
+
+  
+  @media (max-width: 768px) {
+    form.box{
+        height: 300px;
+        width: 300px;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    h1.logintitle{
+        font-size: 2rem;
+    }
+
+    input.login{
+        width: 220px;
+        height: 30px;
+        font-size: 1rem;
+        padding-left: 10px;
+    }
+
+    
+  }

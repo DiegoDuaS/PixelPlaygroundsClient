@@ -24,3 +24,24 @@
     color: #ffffff;
     font-family: "Jersey 10", sans-serif;
 }
+
+@media (max-width: 768px) {
+    .edit-posts-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+        top: 30px;
+    }
+
+    .boxnopost{
+        height: 100px;
+        width: 300px;
+    }
+
+    .noposttext{
+        font-size: 1.5rem;
+    }
+    
+}
+  

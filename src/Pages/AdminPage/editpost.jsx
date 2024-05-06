@@ -88,23 +88,11 @@ function EditPost () {
   return (
         <>
             <div className='edit-posts-container'>
-                <ul className='postsbox'>
-                    {data.map((post, index) => (
-                        <AdminCard
-                            key={post.post_id}
-                            id={post.post_id}
-                            nombre={post.name}
-                            fecha={(post.release_date).substring(0, 10)}
-                            info={post.description}
-                            onClick={() => handleAdminCardClick(post.post_id)}
-                        />
-                    ))}
-                </ul>
-                {idpost !== null && !isLoadingGetPost
-                  ? (
+            {idpost !== null && !isLoadingGetPost
+              ? (
                     <PostForm id={idpost} chosename={name} chosedate={releasedate} chosedescription={descrpition} choseimage={image} tipo={'EDIT'} />
-                    )
-                  : (
+                )
+              : (
                     <div className='boxnopost'>
   {isLoadingGetPost
     ? (
@@ -117,7 +105,20 @@ function EditPost () {
     </>
       )}
 </div>
-                    )}
+                )}
+                <ul className='postsbox'>
+                    {data.map((post, index) => (
+                        <AdminCard
+                            key={post.post_id}
+                            id={post.post_id}
+                            nombre={post.name}
+                            fecha={(post.release_date).substring(0, 10)}
+                            info={post.description}
+                            onClick={() => handleAdminCardClick(post.post_id)}
+                        />
+                    ))}
+                </ul>
+
             </div>
         </>
   );
