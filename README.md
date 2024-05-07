@@ -12,6 +12,7 @@ Pixel Playgrounds Client es un blog desarrollado con Vite + React con un tema de
 - [Demo](#demo)
 - [Contribución](#contribución)
 - [Créditos](#créditos)
+- [Extras](#extras)
 
 ## Instalación
 
@@ -56,3 +57,6 @@ Puedes encontrarme aqui:
 
 - [LinkedIn](www.linkedin.com/in/diego-duarte-slowing-080b1b22b)
 
+## Extras
+
+Puedes encontrar la parte del server aqui: [Pixel Playgrounds Server](https://github.com/DiegoDuaS/PixelPlaygroundsServer)
