@@ -2,7 +2,7 @@
 
 # Pixel Playgrounds Client
 
-Pixel Playgrounds Client es un blog desarrollado con Vite + React con un tema de videojuegos. En la pantalla principal, los usuarios pueden ver todas las publicaciones de los diferentes juegos, y en la pantalla de administración, pueden crear un nuevo post, editar un post existente o borrar un post. Se utilizaron herramientas de React y Blocks.
+Pixel Playgrounds Client es un blog desarrollado con Vite + React con un tema de videojuegos. En la pantalla principal, los usuarios pueden ver todas las publicaciones de los diferentes juegos, y en la pantalla de administración, pueden crear un nuevo post, editar un post existente o borrar un post. Se utilizaron herramientas de React y Blocks. La página esta diseñada para navegadores en modo oscuro.
 
 ## Índice
 
