@@ -36,7 +36,7 @@ const Pages = () => {
     return <div className='box'>
         <HeaderLogin/>
         <h1 className='unauthorized'>No autorizado</h1>
-        <a className='gologin' href='/login' onClick={() => navigate('/login')}>Iniciar Sesión</a>
+        <a className='gologin' onClick={() => navigate('/login')}>Iniciar Sesión</a>
       </div>
   }
 
