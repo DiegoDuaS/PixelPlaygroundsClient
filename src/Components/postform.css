@@ -44,11 +44,12 @@ button.post{
 
 @media (max-width: 768px) {
     form.boxnewpost{
-        bottom: 200px;
         height: 400px;
         width: 300px;
         align-items: center;
         justify-content: space-evenly;
+        position: relative;
+        top: 0;
     }
 
     input.post{
