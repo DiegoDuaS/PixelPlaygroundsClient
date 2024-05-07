@@ -19,7 +19,7 @@ Pixel Playgrounds Client es un blog desarrollado con Vite + React con un tema de
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/pixel-playgrounds-client.git
+git clone https://github.com/DiegoDuaS/PixelPlaygroundsClient.git
 ```
 
 ```bash
