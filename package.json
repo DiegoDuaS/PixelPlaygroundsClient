@@ -1,4 +1,5 @@
 {
+  "homepage": "http://diegods.github.io/PixelPlaygroundsClient",
   "name": "pixelplaygroundsclient",
   "private": true,
   "version": "0.0.0",
@@ -11,6 +12,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "gh-pages": "^6.1.1",
     "md5": "^2.3.0",
     "node": "^18.20.2",
     "react": "^18.2.0",

@@ -6,7 +6,7 @@ import useApi from '../../Hooks/useApi'
 import { Blocks } from 'react-loader-spinner'
 
 function DeletePost () {
-  const { data, errorMessage, isLoading } = useApi('http://127.0.0.1:3002/posts', 'GET');
+  const { data, errorMessage, isLoading } = useApi('https://api.tiburoncin.lat/23075/posts', 'GET');
   const [postName, setpostName] = useState('')
   const [idpost, setidpost] = useState(null)
   const [isOpen, setisOpen] = useState(false)
@@ -25,7 +25,7 @@ function DeletePost () {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:3002/deletepost', {
+      const response = await fetch('https://api.tiburoncin.lat/23075/deletepost', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

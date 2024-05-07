@@ -33,7 +33,7 @@ function PostForm ({ id, chosename, chosedate, chosedescription, choseimage, tip
 
   const handleEditSubmit = async (id) => {
     try {
-      const response = await fetch('http://127.0.0.1:3002/updatepost', {
+      const response = await fetch('https://api.tiburoncin.lat/23075/updatepost', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -77,7 +77,7 @@ function PostForm ({ id, chosename, chosedate, chosedescription, choseimage, tip
     };
 
     try {
-      const response = await fetch('http://127.0.0.1:3002/createpost', {
+      const response = await fetch('https://api.tiburoncin.lat/23075/createpost', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

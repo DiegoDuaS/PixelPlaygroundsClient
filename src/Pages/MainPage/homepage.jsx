@@ -6,7 +6,7 @@ import useApi from '../../Hooks/useApi'
 import { Blocks } from 'react-loader-spinner'
 
 function HomePage () {
-  const { data, errorMessage, isLoading } = useApi('http://127.0.0.1:3002/posts', 'GET');
+  const { data, errorMessage, isLoading } = useApi('https://api.tiburoncin.lat/23075/posts', 'GET');
 
   if (isLoading) {
     return (

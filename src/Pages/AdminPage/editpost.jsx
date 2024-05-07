@@ -8,7 +8,7 @@ import PostForm from '../../Components/postform'
 import './editpost.css'
 
 function EditPost () {
-  const { data, errorMessage, isLoading } = useApi('http://127.0.0.1:3002/posts', 'GET');
+  const { data, errorMessage, isLoading } = useApi('https://api.tiburoncin.lat/23075/posts', 'GET');
   const [idpost, setidpost] = useState(null)
   const [name, setName] = useState('');
   const [releasedate, setReleasedate] = useState('');
@@ -21,7 +21,7 @@ function EditPost () {
     setisLoadingGetPost(true)
 
     try {
-      const response = await fetch('http://127.0.0.1:3002/getpost', {
+      const response = await fetch('https://api.tiburoncin.lat/23075/getpost', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
