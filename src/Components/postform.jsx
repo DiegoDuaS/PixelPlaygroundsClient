@@ -32,6 +32,8 @@ function PostForm ({ id, chosename, chosedate, chosedescription, choseimage, tip
   }, [chosename, chosedate, chosedescription, choseimage]);
 
   const handleEditSubmit = async (id) => {
+
+
     try {
       const response = await fetch('https://api.tiburoncin.lat/23075/updatepost', {
         method: 'POST',
@@ -76,6 +78,7 @@ function PostForm ({ id, chosename, chosedate, chosedescription, choseimage, tip
       image
     };
 
+    console.log(requestBody)
     try {
       const response = await fetch('https://api.tiburoncin.lat/23075/createpost', {
         method: 'POST',
@@ -166,7 +169,7 @@ function PostForm ({ id, chosename, chosedate, chosedescription, choseimage, tip
                 <input
                     className="post"
                     type="text"
-                    placeholder="Imagen (Base64)"
+                    placeholder="Imagen (Coloca la URL de la Imagen)"
                     name="image"
                     value={image}
                     onChange={(e) => setImage(e.target.value)}
