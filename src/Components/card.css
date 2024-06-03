@@ -42,6 +42,7 @@ li.card {
     margin-inline-end: 30px;
     font-family: "Questrial", sans-serif;
     font-size: 1.2rem;
+    color: #ffffff;
   }
   
   @media (max-width: 768px) {
